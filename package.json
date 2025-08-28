@@ -1,0 +1,44 @@
+{
+  "name": "fire-incident-mini-portal",
+  "version": "1.0.0",
+  "description": "Mini portal for fire incident management",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:server": "npm --workspace apps/server run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
+    "install:all": "npm install && npm run install:web && npm run install:server",
+    "install:web": "npm --workspace apps/web install",
+    "install:server": "npm --workspace apps/server install",
+    "build": "npm run build:web && npm run build:server",
+    "build:web": "npm --workspace apps/web run build",
+    "build:server": "npm --workspace apps/server run build",
+    "type-check": "npm run type-check:web && npm run type-check:server",
+    "type-check:web": "npm --workspace apps/web run type-check",
+    "type-check:server": "npm --workspace apps/server run type-check",
+    "lint": "npm run lint:web && npm run lint:server",
+    "lint:web": "npm --workspace apps/web run lint",
+    "lint:server": "npm --workspace apps/server run lint",
+    "lint:fix": "npm run lint:fix:web && npm run lint:fix:server",
+    "lint:fix:web": "npm --workspace apps/web run lint:fix",
+    "lint:fix:server": "npm --workspace apps/server run lint:fix"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "fire",
+    "incident",
+    "portal",
+    "react",
+    "express",
+    "mongodb",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT"
+}
